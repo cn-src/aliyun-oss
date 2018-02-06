@@ -9,6 +9,7 @@
     <version>1.0.0-SNAPSHOT</version>
     <name>aliyun-spring-boot-starter-oss</name>
     <description>Aliyun OSS spring boot starter</description>
+    <url>https://github.com/cn-src/aliyun-oss</url>
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
