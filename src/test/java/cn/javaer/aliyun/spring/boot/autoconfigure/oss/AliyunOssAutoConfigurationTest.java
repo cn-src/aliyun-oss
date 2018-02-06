@@ -15,6 +15,7 @@ package cn.javaer.aliyun.spring.boot.autoconfigure.oss;
 
 import com.aliyun.oss.HttpMethod;
 import com.aliyun.oss.OSSClient;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,7 @@ import java.util.Date;
 /**
  * @author zhangpeng
  */
-//@Ignore
+@Ignore
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = AliyunOssAutoConfiguration.class)
 public class AliyunOssAutoConfigurationTest {
