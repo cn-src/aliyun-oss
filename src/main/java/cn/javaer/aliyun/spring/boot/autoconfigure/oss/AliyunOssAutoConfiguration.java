@@ -13,11 +13,32 @@
 
 package cn.javaer.aliyun.spring.boot.autoconfigure.oss;
 
+import com.aliyun.oss.OSSClient;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
  * @author zhangpeng
  */
 @Configuration
+@ConditionalOnClass({OSSClient.class})
+@EnableConfigurationProperties(AliyunOssProperties.class)
 public class AliyunOssAutoConfiguration {
+
+    private final AliyunOssProperties aliyunOssProperties;
+
+    public AliyunOssAutoConfiguration(final AliyunOssProperties aliyunOssProperties) {
+        this.aliyunOssProperties = aliyunOssProperties;
+    }
+
+    @Bean
+    public OssClientFactoryBean ossClientFactoryBean() {
+        final OssClientFactoryBean factoryBean = new OssClientFactoryBean();
+        factoryBean.setEndpoint(this.aliyunOssProperties.getEndpoint());
+        factoryBean.setAccessKeyId(this.aliyunOssProperties.getAccessKeyId());
+        factoryBean.setAccessKeySecret(this.aliyunOssProperties.getAccessKeySecret());
+        return factoryBean;
+    }
 }
