@@ -13,6 +13,7 @@
 
 package cn.javaer.aliyun.spring.boot.autoconfigure.oss;
 
+import com.aliyun.oss.HttpMethod;
 import com.aliyun.oss.OSSClient;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -25,6 +26,7 @@ import org.springframework.util.StreamUtils;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.util.Date;
 
 /**
  * @author zhangpeng
@@ -45,6 +47,7 @@ public class AliyunOssAutoConfigurationTest {
         this.ossClient.putObject(bucketName, fileKey, new File(localFile));
         final InputStream inputStream = this.ossClient.getObject(bucketName, fileKey).getObjectContent();
         StreamUtils.copy(inputStream, new FileOutputStream(downloadFile));
+        System.out.println(this.ossClient.generatePresignedUrl(bucketName, fileKey, new Date(), HttpMethod.GET).toString());
         this.ossClient.deleteObject(bucketName, fileKey);
     }
 }
