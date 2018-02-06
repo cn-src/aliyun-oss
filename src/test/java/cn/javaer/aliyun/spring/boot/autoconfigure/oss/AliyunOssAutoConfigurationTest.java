@@ -20,6 +20,11 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.util.StreamUtils;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
 
 /**
  * @author zhangpeng
@@ -32,7 +37,14 @@ public class AliyunOssAutoConfigurationTest {
     private OSSClient ossClient;
 
     @Test
-    public void ossClientFactoryBean() {
-
+    public void ossClientFactoryBean() throws Exception {
+        final String bucketName = "";
+        final String fileKey = "";
+        final String localFile = "";
+        final String downloadFile = "";
+        this.ossClient.putObject(bucketName, fileKey, new File(localFile));
+        final InputStream inputStream = this.ossClient.getObject(bucketName, fileKey).getObjectContent();
+        StreamUtils.copy(inputStream, new FileOutputStream(downloadFile));
+        this.ossClient.deleteObject(bucketName, fileKey);
     }
 }
