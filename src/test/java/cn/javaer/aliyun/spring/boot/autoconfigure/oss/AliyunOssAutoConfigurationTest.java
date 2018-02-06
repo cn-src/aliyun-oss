@@ -15,7 +15,6 @@ package cn.javaer.aliyun.spring.boot.autoconfigure.oss;
 
 import com.aliyun.oss.HttpMethod;
 import com.aliyun.oss.OSSClient;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +30,7 @@ import java.util.Date;
 /**
  * @author zhangpeng
  */
-@Ignore
+//@Ignore
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = AliyunOssAutoConfiguration.class)
 public class AliyunOssAutoConfigurationTest {
@@ -43,11 +42,11 @@ public class AliyunOssAutoConfigurationTest {
         final String bucketName = "";
         final String fileKey = "";
         final String localFile = "";
-        final String downloadFile = "";
+        final String downloadFile = "demo.jpg";
         this.ossClient.putObject(bucketName, fileKey, new File(localFile));
         final InputStream inputStream = this.ossClient.getObject(bucketName, fileKey).getObjectContent();
         StreamUtils.copy(inputStream, new FileOutputStream(downloadFile));
-        System.out.println(this.ossClient.generatePresignedUrl(bucketName, fileKey, new Date(), HttpMethod.GET).toString());
-        this.ossClient.deleteObject(bucketName, fileKey);
+        System.out.println(this.ossClient.generatePresignedUrl(bucketName, fileKey, new Date(System.currentTimeMillis() + (1000 * 30)), HttpMethod.GET).toString());
+//        this.ossClient.deleteObject(bucketName, fileKey);
     }
 }
