@@ -34,7 +34,7 @@ import java.util.Date;
 @Ignore
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = AliyunOssAutoConfiguration.class)
-public class AliyunOssAutoConfigurationTest {
+public class AliyunOssAutoConfigurationDemo {
     @Autowired
     private OSSClient ossClient;
 
