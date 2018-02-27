@@ -33,8 +33,8 @@ import java.util.Date;
  */
 @Ignore
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = AliyunOssAutoConfiguration.class)
-public class AliyunOssAutoConfigurationDemo {
+@SpringBootTest(classes = OssAutoConfiguration.class)
+public class OssAutoConfigurationDemo {
     @Autowired
     private OSSClient ossClient;
 

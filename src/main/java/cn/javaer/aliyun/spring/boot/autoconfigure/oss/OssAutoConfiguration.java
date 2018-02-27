@@ -25,11 +25,11 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConditionalOnClass({OSSClient.class})
 @EnableConfigurationProperties(OssProperties.class)
-public class AliyunOssAutoConfiguration {
+public class OssAutoConfiguration {
 
     private final OssProperties ossProperties;
 
-    public AliyunOssAutoConfiguration(final OssProperties ossProperties) {
+    public OssAutoConfiguration(final OssProperties ossProperties) {
         this.ossProperties = ossProperties;
     }
 
