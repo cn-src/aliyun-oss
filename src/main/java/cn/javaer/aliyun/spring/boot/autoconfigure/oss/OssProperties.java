@@ -23,7 +23,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Getter
 @Setter
 @ConfigurationProperties(prefix = "aliyun.oss")
-public class AliyunOssProperties {
+public class OssProperties {
     private String endpoint;
     private String accessKeyId;
     private String accessKeySecret;

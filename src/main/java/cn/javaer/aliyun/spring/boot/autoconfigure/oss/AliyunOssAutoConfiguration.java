@@ -24,21 +24,21 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ConditionalOnClass({OSSClient.class})
-@EnableConfigurationProperties(AliyunOssProperties.class)
+@EnableConfigurationProperties(OssProperties.class)
 public class AliyunOssAutoConfiguration {
 
-    private final AliyunOssProperties aliyunOssProperties;
+    private final OssProperties ossProperties;
 
-    public AliyunOssAutoConfiguration(final AliyunOssProperties aliyunOssProperties) {
-        this.aliyunOssProperties = aliyunOssProperties;
+    public AliyunOssAutoConfiguration(final OssProperties ossProperties) {
+        this.ossProperties = ossProperties;
     }
 
     @Bean
     public OssClientFactoryBean ossClientFactoryBean() {
         final OssClientFactoryBean factoryBean = new OssClientFactoryBean();
-        factoryBean.setEndpoint(this.aliyunOssProperties.getEndpoint());
-        factoryBean.setAccessKeyId(this.aliyunOssProperties.getAccessKeyId());
-        factoryBean.setAccessKeySecret(this.aliyunOssProperties.getAccessKeySecret());
+        factoryBean.setEndpoint(this.ossProperties.getEndpoint());
+        factoryBean.setAccessKeyId(this.ossProperties.getAccessKeyId());
+        factoryBean.setAccessKeySecret(this.ossProperties.getAccessKeySecret());
         return factoryBean;
     }
 }
