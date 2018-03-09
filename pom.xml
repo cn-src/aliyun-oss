@@ -4,9 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.javaer.aliyun</groupId>
-    <artifactId>aliyun-oss-starter</artifactId>
+    <artifactId>aliyun-spring-boot-starter-oss</artifactId>
     <version>1.0.1-SNAPSHOT</version>
-    <name>${artifactId}</name>
+    <name>aliyun-spring-boot-starter-oss</name>
     <description>Aliyun OSS spring boot starter</description>
     <url>https://github.com/cn-src/aliyun-oss</url>
     <licenses>
