@@ -20,7 +20,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author zhangpeng
+ * @author cn-src
  */
 @Configuration
 @ConditionalOnClass({OSSClient.class})

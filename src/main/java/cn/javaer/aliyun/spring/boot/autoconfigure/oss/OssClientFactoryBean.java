@@ -20,7 +20,7 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.util.Assert;
 
 /**
- * @author zhangpeng
+ * @author cn-src
  */
 public class OssClientFactoryBean implements FactoryBean<OSSClient>, InitializingBean, DisposableBean {
 
