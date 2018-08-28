@@ -10,7 +10,7 @@
 1. 添加依赖
 ```java
 <dependency>
-    <groupId>cn.javaer</groupId>
+    <groupId>cn.javaer.aliyun</groupId>
     <artifactId>aliyun-spring-boot-starter-oss</artifactId>
     <version>1.1.0</version>
 </dependency>
