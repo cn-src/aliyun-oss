@@ -1,5 +1,5 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-![Maven Central](https://img.shields.io/maven-central/v/cn.javaer/aliyun-spring-boot-starter-oss.svg)
+![Maven Central](https://img.shields.io/maven-central/v/cn.javaer.aliyun/aliyun-spring-boot-starter-oss.svg)
 [![Build Status](https://travis-ci.org/cn-src/aliyun-oss.svg?branch=master)](https://travis-ci.org/cn-src/aliyun-oss)
 [![Libraries.io for GitHub](https://img.shields.io/librariesio/github/cn-src/aliyun-oss.svg)](https://libraries.io/github/cn-src/aliyun-oss)
 
